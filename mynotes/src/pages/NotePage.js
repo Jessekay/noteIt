@@ -1,7 +1,8 @@
 import React from 'react'
 
-const NotePage = (props) => {
-  console.log("props:", props.match.params.id);
+const NotePage = (match) => {
+  let noteId= match;
+  console.log("note id:", noteId);
 
   return (
     <div>
