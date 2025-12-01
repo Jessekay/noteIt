@@ -1,12 +1,15 @@
-import React from 'react'
+import notes from '../assets/data'
 
-const NotePage = (match) => {
-  let noteId= match;
-  console.log("note id:", noteId);
+const NotePage = ({ match }) => {
+  let noteId= match.params.id;
+
+  let note = notes.find(note => note.id === Number(noteId))
+
+  if (!note) return "Note not found!";
 
   return (
     <div>
-      <h1>This is my new page</h1>
+      <p>{note.body}</p>
     </div>
   )
 }
